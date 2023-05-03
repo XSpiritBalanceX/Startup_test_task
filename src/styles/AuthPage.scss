@@ -23,7 +23,10 @@
   border: 2px solid map-get($theme-colors, "violet");
   width: 320px;
   height: 73px;
-  @extend %text-in-picture;
+  width: 320px;
+  height: 73px;
+  position: absolute;
+  @extend %text-h5;
 }
 .firstPicture {
   left: 80px;

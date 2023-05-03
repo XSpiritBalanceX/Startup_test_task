@@ -1,0 +1,85 @@
+@import "variables";
+
+.footerContainer {
+  background-color: map-get($theme-colors, "violet");
+  max-width: 2000px;
+  padding: 60px 8% 0px 12%;
+  position: relative;
+  height: 430px;
+  p {
+    @extend %text-h2;
+    color: map-get($theme-colors, "white");
+  }
+  .list-group-item {
+    border: none;
+    background-color: transparent;
+    @extend %text-h5;
+    color: map-get($theme-colors, "white");
+    padding-left: 3px;
+  }
+  img {
+    width: 130px;
+    height: 51px;
+  }
+}
+
+.logoFooter {
+  flex: 0.4;
+  margin-right: 4%;
+}
+
+.aboutUs {
+  flex: 0.6;
+  margin-right: 5%;
+}
+
+.teachersDiv {
+  flex: 0.6;
+  margin-right: 5%;
+  position: relative;
+  width: 100%;
+  .list-group-item {
+    width: 50%;
+  }
+  span {
+    @extend %text-small;
+    color: map-get($theme-colors, "white");
+    position: absolute;
+    bottom: 0;
+    left: 85%;
+  }
+}
+
+.emailDiv {
+  flex: 1;
+  :last-child {
+    @extend %text-h5;
+    padding-left: 4px;
+  }
+}
+
+.secondRow {
+  margin-top: 4%;
+  .col > p {
+    @extend %text-small;
+  }
+}
+
+.nullFlex {
+  flex: 0.1;
+  margin-right: 10%;
+}
+
+.firstFlex {
+  flex: 0.5;
+  margin-right: -4.5%;
+}
+
+.secondFlex {
+  flex: 0.5;
+  margin-right: 2.5%;
+}
+
+.thirdFlex {
+  flex: 0.5;
+}
