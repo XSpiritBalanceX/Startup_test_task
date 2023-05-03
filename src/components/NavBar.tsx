@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
-//import logo from "../images/logo.png";
 
 const logo = require("../images/logo.png");
 
@@ -29,7 +28,7 @@ const NavBar = () => {
             <NavLink to={"/"} className="nav-link enterButton">
               Войти
             </NavLink>
-            <NavLink to={"/"} className="nav-link">
+            <NavLink to={"/registration"} className="nav-link">
               Зарегистрироваться
             </NavLink>
           </div>

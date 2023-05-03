@@ -1,0 +1,46 @@
+@import "variables";
+
+.authPageContainer {
+  padding: 124px 60px;
+  position: relative;
+}
+
+.mainWords {
+  @extend %main-words;
+  color: map-get($theme-colors, "violet");
+  span {
+    color: map-get($theme-colors, "white");
+    background-color: map-get($theme-colors, "violet");
+    padding: 4px 15px;
+    border-radius: 4px;
+  }
+}
+
+.firstPicture,
+.secondPicture {
+  color: map-get($theme-colors, "violet");
+  background-color: map-get($theme-colors, "light-violet");
+  border: 2px solid map-get($theme-colors, "violet");
+  width: 320px;
+  height: 73px;
+  @extend %text-in-picture;
+}
+.firstPicture {
+  left: 80px;
+  top: 240px;
+  transform: rotate(-5deg);
+}
+
+.secondPicture {
+  left: 280px;
+  top: 330px;
+  transform: rotate(2deg);
+}
+
+.mainPicture {
+  width: 500px;
+  height: 320px;
+  position: absolute;
+  top: 410px;
+  left: 20px;
+}

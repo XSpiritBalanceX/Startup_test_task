@@ -1,0 +1,84 @@
+@import "variables";
+
+.containerForm {
+  background-color: map-get($theme-colors, "white");
+  padding: 60px 100px;
+  margin-top: -10%;
+  text-align: center;
+  box-shadow: map-deep-get($theme-colors, "box-shadow", "form");
+  p {
+    @extend %header-in-form;
+  }
+  form {
+    text-align: start;
+    label {
+      @extend %header-in-form;
+      font-size: 18px;
+    }
+    input {
+      width: 380px;
+      height: 43px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid map-deep-get($theme-colors, "text", "grey");
+      color: map-deep-get($theme-colors, "text", "light");
+      @extend %text-in-nav;
+    }
+    :nth-child(3) {
+      text-align: end;
+      @extend %text-small;
+      color: map-get($theme-colors, "violet");
+      margin-top: -10px;
+    }
+    button {
+      width: 100%;
+      padding: 10px 20px;
+      background-color: map-get($theme-colors, "violet");
+      border-color: map-get($theme-colors, "violet");
+      border-radius: 100px;
+      @extend %text-in-nav;
+    }
+    :nth-child(5) {
+      display: flex;
+      flex-direction: row;
+      p,
+      a {
+        @extend %text-small;
+      }
+      p {
+        margin-right: 10px;
+        color: map-deep-get($theme-colors, "text", "grey");
+      }
+      a {
+        color: map-get($theme-colors, "violet");
+      }
+    }
+  }
+}
+
+.socialNetwork {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    color: map-deep-get($theme-colors, "text", "dark");
+  }
+  ul {
+    list-style: none;
+    display: flex;
+  }
+  li {
+    width: 32px;
+    height: 32px;
+    background-color: map-get($theme-colors, "violet");
+    color: map-get($theme-colors, "white");
+    border-radius: 500px;
+    line-height: 2;
+    margin-right: 20px;
+  }
+}
