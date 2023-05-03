@@ -1,0 +1,6 @@
+@import "./styles/variables";
+
+body {
+  background-color: map-get($theme-colors, "body");
+  font-family: "Montserrat", sans-serif;
+}
