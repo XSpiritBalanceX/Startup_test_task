@@ -5,6 +5,7 @@ $theme-colors: (
   "violet": #5e66a7,
   "white": #fefeff,
   "light-violet": #e7e7ff66,
+  "dark": #4a4a4f,
   "text": (
     "grey": #a1a1a1,
     "light": #b6b6bb,
@@ -13,6 +14,9 @@ $theme-colors: (
   "box-shadow": (
     "form": (
       0px 12px 24px rgba(129, 137, 197, 0.2),
+    ),
+    "navbar": (
+      0px 8px 20px rgba(201, 207, 255, 0.12),
     ),
   ),
 );

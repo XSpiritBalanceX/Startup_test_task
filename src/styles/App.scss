@@ -3,6 +3,8 @@
 .navbar {
   background-color: map-get($theme-colors, "white");
   padding: 33px 130px 33px 130px;
+  box-shadow: map-deep-get($theme-colors, "box-shadow", "navbar");
+  height: 110px;
 }
 
 .navBarContainer {

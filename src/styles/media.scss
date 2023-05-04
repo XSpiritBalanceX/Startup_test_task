@@ -2,7 +2,8 @@
   .navbar {
     background-color: red;
   }
-  .containerForm {
+  .containerForm,
+  .containerFormRegistration {
     width: 90%;
     padding: 60px 60px;
     form {
@@ -12,6 +13,7 @@
       }
     }
   }
+
   .firstPicture {
     width: 28%;
     height: auto;
@@ -82,6 +84,11 @@
     width: 90%;
     padding: 40px 40px;
   }
+
+  .containerFormRegistration {
+    margin-right: 0;
+  }
+
   .firstPicture {
     width: 35%;
     top: 260px;
@@ -111,7 +118,8 @@
     width: 80%;
     margin: auto;
   }
-  .containerForm {
+  .containerForm,
+  .containerFormRegistration {
     margin: 65% 0 0 5%;
   }
   .firstPicture {
@@ -150,7 +158,8 @@
       padding: 10px 15px !important;
     }
   }
-  .containerForm {
+  .containerForm,
+  .containerFormRegistration {
     margin: 70% 0 0 10%;
     width: 80%;
   }
@@ -173,7 +182,8 @@
     background-color: rgb(71, 108, 229);
     padding-left: 0;
   }
-  .containerForm {
+  .containerForm,
+  .containerFormRegistration {
     margin: 80% 0 0 0%;
     width: 100%;
   }
@@ -233,7 +243,8 @@
   .authPageContainer {
     margin: 0%;
   }
-  .containerForm {
+  .containerForm,
+  .containerFormRegistration {
     margin: 95% 0 0 7%;
     width: 100%;
   }
@@ -279,7 +290,8 @@
   .mainPicture {
     left: 50px;
   }
-  .containerForm {
+  .containerForm,
+  .containerFormRegistration {
     margin: 100% 0 0 10%;
     width: 100%;
   }
@@ -298,6 +310,9 @@
   }
   .containerForm {
     margin: 100% 0 0 7%;
+  }
+  .containerFormRegistration {
+    margin: 110% 0 0 7%;
   }
   .firstPicture {
     width: 70%;
