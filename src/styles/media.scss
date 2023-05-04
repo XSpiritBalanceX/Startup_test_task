@@ -1,0 +1,316 @@
+@media all and (max-width: 90em) {
+  .navbar {
+    background-color: red;
+  }
+  .containerForm {
+    width: 90%;
+    padding: 60px 60px;
+    form {
+      width: 100%;
+      .form-control {
+        width: 100%;
+      }
+    }
+  }
+  .firstPicture {
+    width: 28%;
+    height: auto;
+    top: 250px;
+  }
+  .secondPicture {
+    width: 28%;
+    height: auto;
+    top: 350px;
+    transform: rotate(3deg);
+  }
+  .mainPicture {
+    top: 430px;
+  }
+}
+
+@media all and (max-width: 80em) {
+  .navbar {
+    background-color: peru;
+  }
+  .authPageContainer {
+    margin-right: 20px;
+    padding-left: 0;
+    width: 87%;
+  }
+  .containerForm {
+    width: 93%;
+    text-align: center;
+    margin-right: 0;
+    padding: 50px -10px;
+    form {
+      width: 100%;
+    }
+  }
+  .socialNetwork {
+    width: 70%;
+    margin-left: 20px;
+  }
+  .footerContainer {
+    height: auto;
+  }
+  .firstPicture {
+    width: 32%;
+    top: 250px;
+    left: 20px;
+  }
+  .secondPicture {
+    width: 30%;
+    top: 350px;
+    left: 210px;
+  }
+  .mainPicture {
+    top: 440px;
+    left: -30px;
+  }
+}
+
+@media all and (max-width: 75em) {
+  .navbar {
+    background-color: green;
+  }
+  .authPageContainer {
+    width: 95%;
+    margin: 0 0% 5% 12%;
+    padding-right: 0px;
+  }
+  .containerForm {
+    width: 90%;
+    padding: 40px 40px;
+  }
+  .firstPicture {
+    width: 35%;
+    top: 260px;
+    left: 20px;
+  }
+  .secondPicture {
+    width: 33%;
+    top: 355px;
+  }
+  .mainPicture {
+    top: 460px;
+  }
+}
+
+@media all and (max-width: 70em) {
+  .navbar {
+    background-color: yellow;
+  }
+  .authPageContainer {
+    margin-left: 8%;
+    width: 90%;
+  }
+  .mainContent {
+    flex-direction: column;
+  }
+  .mainWords {
+    width: 80%;
+    margin: auto;
+  }
+  .containerForm {
+    margin: 65% 0 0 5%;
+  }
+  .firstPicture {
+    width: 45%;
+    top: 240px;
+    left: 120px;
+  }
+  .secondPicture {
+    width: 45%;
+    top: 345px;
+    left: 380px;
+  }
+  .mainPicture {
+    top: 420px;
+    left: 80px;
+  }
+  .socialNetwork {
+    width: 90%;
+  }
+}
+
+@media all and (max-width: 65em) {
+  .navbar {
+    background-color: pink;
+    a {
+      font-size: 16px;
+    }
+    .enterButton {
+      font-size: 16px;
+      width: 90px;
+      padding: 10px 15px !important;
+    }
+    :nth-child(3) {
+      width: 200px;
+      font-size: 16px;
+      padding: 10px 15px !important;
+    }
+  }
+  .containerForm {
+    margin: 70% 0 0 10%;
+    width: 80%;
+  }
+  .authPageContainer {
+    margin-left: 2%;
+  }
+  .footerContainer {
+    padding: 25px;
+    p {
+      font-size: 18px;
+    }
+    .emailDiv {
+      padding-top: 2%;
+    }
+  }
+}
+
+@media all and (max-width: 60em) {
+  .navbar {
+    background-color: rgb(71, 108, 229);
+    padding-left: 0;
+  }
+  .containerForm {
+    margin: 80% 0 0 0%;
+    width: 100%;
+  }
+  .authPageContainer {
+    margin: 0% 0 0 10%;
+  }
+}
+
+@media all and (max-width: 55em) {
+  .navbar {
+    background-color: rgb(237, 42, 120);
+    padding-left: 20px;
+    a {
+      font-size: 14px;
+    }
+    .enterButton {
+      font-size: 14px;
+      width: 80px;
+      padding: 10px 15px !important;
+    }
+    :nth-child(3) {
+      width: 180px;
+      font-size: 14px;
+      padding: 10px 15px !important;
+    }
+  }
+  .authPageContainer {
+    margin: 0% 0 0 5%;
+  }
+  .footerContainer {
+    p {
+      font-size: 18px;
+    }
+    .list-group-item,
+    .emailDiv p:nth-child(2) {
+      font-size: 15px;
+    }
+  }
+}
+
+@media all and (max-width: 50em) {
+  .navbar {
+    background-color: rgb(50, 235, 50);
+    padding-left: 0;
+    .enterButton {
+      width: 70px;
+      padding: 5px 10px !important;
+    }
+    :nth-child(3) {
+      width: 170px;
+      padding: 5px 10px !important;
+    }
+    img {
+      width: 100px;
+    }
+  }
+  .authPageContainer {
+    margin: 0%;
+  }
+  .containerForm {
+    margin: 95% 0 0 7%;
+    width: 100%;
+  }
+  .firstPicture {
+    width: 60%;
+    top: 240px;
+    left: 100px;
+  }
+  .secondPicture {
+    width: 60%;
+    top: 350px;
+    left: 280px;
+  }
+  .mainPicture {
+    top: 430px;
+    left: 60px;
+  }
+}
+
+@media all and (max-width: 45em) {
+  .navbar {
+    background-color: rgb(237, 101, 91);
+    img {
+      width: 80px;
+      margin-right: 10px;
+    }
+    .enterButton {
+      margin-right: 5px;
+    }
+  }
+  .mainWords {
+    width: 100%;
+    margin-left: 12%;
+  }
+  .firstPicture {
+    width: 70%;
+    top: 240px;
+  }
+  .secondPicture {
+    width: 68%;
+    top: 340px;
+  }
+  .mainPicture {
+    left: 50px;
+  }
+  .containerForm {
+    margin: 100% 0 0 10%;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 40em) {
+  .navbar {
+    background-color: rgb(82, 211, 240);
+    padding: 10px;
+    img {
+      width: 120px;
+    }
+  }
+  .navBarContainer {
+    flex-direction: column;
+  }
+  .containerForm {
+    margin: 100% 0 0 7%;
+  }
+  .firstPicture {
+    width: 70%;
+    top: 260px;
+    left: 80px;
+  }
+  .secondPicture {
+    width: 70%;
+    top: 370px;
+    left: 230px;
+  }
+  .mainPicture {
+    top: 470px;
+    left: 40px;
+  }
+}

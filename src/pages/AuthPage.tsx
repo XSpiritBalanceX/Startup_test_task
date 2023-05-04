@@ -11,7 +11,7 @@ const AuthPage = () => {
   const isRegistrForm = location.pathname === "/registration";
   return (
     <Container className="authPageContainer">
-      <Row>
+      <Row className="mainContent">
         <Col>
           <Row className="mainWords">
             <p>
