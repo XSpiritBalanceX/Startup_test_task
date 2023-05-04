@@ -1,6 +1,6 @@
 import { Container, Form, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import "../styles/Form.scss";
+import "../styles/LoginForm.scss";
 
 const LoginForm = () => {
   return (
@@ -21,7 +21,7 @@ const LoginForm = () => {
         <Button className="mt-3">Войти</Button>
         <div className="mt-2">
           <p>У вас ещё нет аккаунта?</p>
-          <NavLink to={"/"} className="nav-link">
+          <NavLink to={"/registration"} className="nav-link">
             Зарегистрироваться
           </NavLink>
         </div>

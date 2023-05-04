@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import "../styles/AuthPage.scss";
 import LoginForm from "../components/LoginForm";
+import RegistrationForm from "../components/RegiatrationForm";
 
 const mainPicture = require("../images/mainPicture.png");
 
@@ -28,9 +29,7 @@ const AuthPage = () => {
             <img src={mainPicture} title="main picture" alt="main" />
           </Row>
         </Col>
-        <Col>
-          {isRegistrForm ? <div>registration Form</div> : <LoginForm />}
-        </Col>
+        <Col>{isRegistrForm ? <RegistrationForm /> : <LoginForm />}</Col>
       </Row>
     </Container>
   );
