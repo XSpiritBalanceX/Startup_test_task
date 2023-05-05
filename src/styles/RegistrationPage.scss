@@ -1,1 +1,262 @@
+@import "variables";
 
+.registrationPageContainer {
+  margin: 60px 0 150px 130px;
+  width: 60%;
+  input,
+  select {
+    width: 380px;
+    height: 43px;
+    margin-bottom: 20px;
+  }
+  label {
+    @extend %text-h3;
+  }
+  select {
+    padding: 10px;
+    border: solid 1px map-get($theme-colors, "dark");
+    margin-left: 0;
+    @extend %text-in-nav;
+  }
+}
+
+.userPhotos {
+  margin-bottom: 60px;
+  .col:nth-child(1) {
+    flex: 0;
+  }
+  .row:nth-child(1) {
+    label {
+      border: solid 1px map-get($theme-colors, "violet");
+      background-color: map-get($theme-colors, "violet");
+      width: 186px;
+      height: 43px;
+      padding: 10px 20px 10px 20px;
+      border-radius: 100px;
+      @extend %text-in-nav;
+      color: map-get($theme-colors, "white");
+    }
+    input {
+      display: none;
+    }
+    button {
+      background-color: map-get($theme-colors, "white");
+      color: map-get($theme-colors, "violet");
+      border: solid 2px map-get($theme-colors, "violet");
+      width: 111px;
+      height: 43px;
+      @extend %text-in-nav;
+      padding: 10px 20px;
+      border-radius: 100px;
+    }
+    div:nth-child(1) {
+      width: auto;
+      margin-right: 20px;
+    }
+  }
+  .row:nth-child(2) {
+    height: 17px;
+    width: auto;
+    p {
+      @extend %text-in-nav;
+      color: map-deep-get($theme-colors, "text", "dark");
+    }
+  }
+}
+
+.informWindow {
+  width: 380px;
+  height: 71px;
+  background-color: map-get($theme-colors, "lightViolet");
+  border-radius: 5px;
+  position: relative;
+  padding: 10px;
+  p,
+  a {
+    @extend %text-small;
+    width: 336px;
+  }
+  button {
+    background-color: transparent;
+    color: map-deep-get($theme-colors, "text", "grey");
+    border: none;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 17.76px;
+    right: 17.76px;
+    &:hover {
+      background-color: transparent;
+      color: map-deep-get($theme-colors, "text", "grey");
+      border: none;
+    }
+    i {
+      position: absolute;
+      top: -5px;
+      left: 5px;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: map-get($theme-colors, "violet");
+    position: absolute;
+    bottom: 10px;
+    left: 105px;
+  }
+}
+
+.languageRow {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  .row:nth-child(1) {
+    .col:nth-child(1) {
+      flex: 1.05;
+    }
+  }
+  .row:nth-child(2) {
+    textarea {
+      width: 98%;
+      height: 150px;
+    }
+    .col:nth-child(1) {
+      flex: 1.05;
+    }
+    .col:nth-child(2) {
+      flex: 1;
+    }
+  }
+}
+.roundButton {
+  position: relative;
+  label,
+  button {
+    width: 52px;
+    height: 52px;
+    padding: 10px;
+    background-color: map-get($theme-colors, "violet");
+    border: solid 1px map-get($theme-colors, "violet");
+    border-radius: 100px;
+    text-align: center;
+    color: map-get($theme-colors, "white");
+    position: relative;
+    i {
+      position: absolute;
+      top: 9px;
+      left: 10px;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+  }
+  button:hover {
+    background-color: map-get($theme-colors, "violet");
+    border: solid 1px map-get($theme-colors, "violet");
+  }
+  input {
+    display: none;
+  }
+  p {
+    width: 262px;
+    @extend %text-in-nav;
+    position: absolute;
+    left: 72px;
+    top: 15px;
+  }
+}
+.certificateInput {
+  position: relative;
+  p {
+    @extend %text-h3;
+    width: 420px;
+  }
+  span {
+    @extend %text-small;
+    color: map-deep-get($theme-colors, "text", "dark");
+    position: absolute;
+    left: 72px;
+    bottom: 22px;
+    width: 260px;
+  }
+}
+
+.deleteLanguageButton {
+  margin-top: 20px;
+  background-color: map-get($theme-colors, "white");
+  border: solid 2px map-get($theme-colors, "violet");
+  color: map-get($theme-colors, "violet");
+  border-radius: 100px;
+  width: 157px;
+  height: 43px;
+  padding: 10px 20px;
+  &:hover {
+    background-color: map-get($theme-colors, "white");
+    border: solid 2px map-get($theme-colors, "violet");
+    color: map-get($theme-colors, "violet");
+  }
+}
+
+.buttonNext {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 60px;
+  button {
+    background-color: map-get($theme-colors, "violet");
+    border: solid 2px map-get($theme-colors, "violet");
+    color: map-get($theme-colors, "white");
+    border-radius: 100px;
+    width: 94px;
+    height: 43px;
+    padding: 10px 20px;
+    @extend %text-in-nav;
+  }
+  button:hover {
+    background-color: map-get($theme-colors, "white");
+    border: solid 2px map-get($theme-colors, "violet");
+    color: map-get($theme-colors, "violet");
+  }
+}
+
+.certificateDiv {
+  position: relative;
+  width: 315px;
+  .col:nth-child(1) {
+    padding: 0 0 0 15px;
+    flex: 0.2 !important;
+  }
+  .col:nth-child(2) {
+    padding: 10px 15px;
+    width: 100px;
+    p {
+      @extend %text-small;
+      width: 150px;
+    }
+    p:nth-child(2) {
+      color: map-deep-get($theme-colors, "text", "grey");
+    }
+  }
+  img {
+    width: 80px;
+    height: 80px;
+  }
+  button {
+    background-color: transparent;
+    color: map-deep-get($theme-colors, "text", "grey");
+    border: none;
+    width: 7px;
+    height: 10px;
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    &:hover {
+      background-color: transparent;
+      color: map-deep-get($theme-colors, "text", "grey");
+      border: none;
+    }
+    i {
+      position: absolute;
+      top: -5px;
+      left: 5px;
+      font-size: 20px;
+    }
+  }
+}

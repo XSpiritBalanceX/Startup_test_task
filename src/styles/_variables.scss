@@ -6,6 +6,7 @@ $theme-colors: (
   "white": #fefeff,
   "light-violet": #e7e7ff66,
   "dark": #4a4a4f,
+  "lightViolet": #e7e7ff,
   "text": (
     "grey": #a1a1a1,
     "light": #b6b6bb,
@@ -65,4 +66,11 @@ $theme-colors: (
   font-size: 24px;
   font-weight: 600;
   line-height: 120%;
+}
+
+%text-h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 120%;
+  font-family: "Montserrat", sans-serif;
 }
