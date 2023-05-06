@@ -42,12 +42,10 @@
   @extend %text-in-nav;
   line-height: 130%;
 }
-.form-check-input:checked {
-  background-color: map-get($theme-colors, "white");
-  border-color: map-get($theme-colors, "violet");
-}
 .form-check-input:checked[type="radio"] {
   background-image: url("../images/point.svg");
+  background-color: map-get($theme-colors, "white");
+  border-color: map-get($theme-colors, "violet");
 }
 
 .policy {

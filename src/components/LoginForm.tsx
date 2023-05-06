@@ -4,6 +4,7 @@ import "../styles/LoginForm.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
+import { APIUser } from "./axiosWrapper";
 
 interface ILoginForm {
   email: string;
@@ -26,8 +27,13 @@ const LoginForm = () => {
     resolver: yupResolver(validationSchemaLogin),
   });
 
-  const onSubmitLogin = (data: ILoginForm) => {
-    console.log(data);
+  const onSubmitLogin = async (data: ILoginForm) => {
+    const dataResponse = await APIUser.signInUser({
+      email: data.email,
+      password: data.password,
+      device: "postman",
+    });
+    console.log(dataResponse);
   };
   return (
     <Container className="containerForm">

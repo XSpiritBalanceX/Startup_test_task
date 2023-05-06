@@ -4,6 +4,10 @@ import "../styles/RegistrationForm.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
+import YupPassword from "yup-password";
+import { APIUser } from "./axiosWrapper";
+
+YupPassword(Yup);
 
 interface IRegistrationForm {
   first_name: string;
@@ -21,8 +25,11 @@ const RegistrationForm = () => {
     email: Yup.string().required("*Email обязателен").email("*Неверный email"),
     password: Yup.string()
       .required("*Пароль обязателен")
-      .min(6, "*Пароль должен состьять из 6 символов")
-      .max(20, "*Пароль не может иметь больше 20 сиволов"),
+      .min(6, "*Пароль должен состоять из 8 символов")
+      .max(20, "*Пароль не может иметь больше 32 сиволов")
+      .minLowercase(1, "*Пароль должен содержать хотя бы 1 строчную букву")
+      .minUppercase(1, "*Пароль должен содержать хотя бы 1 заглавную букву")
+      .minNumbers(1, "*Пароль должен содержать хотя бы 1 цифру"),
     confirmpassword: Yup.string()
       .required("*Повторите пароль")
       .oneOf([Yup.ref("password")], "*Пароли не совпадают"),
@@ -37,8 +44,16 @@ const RegistrationForm = () => {
     resolver: yupResolver(validationSchemaRegistration),
   });
 
-  const onSubmiRegistration = (data: IRegistrationForm) => {
-    console.log(data);
+  const onSubmiRegistration = async (data: IRegistrationForm) => {
+    const dataResponse = await APIUser.signUpBaseUser({
+      first_name: data.first_name,
+      last_name: data.last_name,
+      email: data.email,
+      password: data.password,
+      device: "postman",
+      user_type: 1,
+    });
+    console.log(dataResponse);
   };
   return (
     <Container className="containerFormRegistration">
