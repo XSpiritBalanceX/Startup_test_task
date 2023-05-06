@@ -15,11 +15,13 @@
     align-items: center;
     @extend %text-in-nav;
   }
-  button,
-  button:hover {
+  select {
     background-color: transparent;
     border: none;
     color: map-deep-get($theme-colors, "text", "grey");
+    width: 55px;
+    margin-top: 15px;
+    @extend %text-in-nav;
   }
   :nth-child(3) {
     border: solid 1px map-get($theme-colors, "violet");

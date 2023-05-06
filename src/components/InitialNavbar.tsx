@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar, Button } from "react-bootstrap";
+import { Container, Nav, Navbar, Form } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 const logo = require("../images/logo.png");
@@ -22,9 +22,11 @@ const InitialNavbar = () => {
             </NavLink>
           </div>
           <div>
-            <Button>
-              Ru <i className="bi bi-chevron-compact-down"></i>
-            </Button>
+            <Form.Select className="mb-3">
+              <option hidden>RU</option>
+              <option value="1">RU</option>
+              <option value="2">EN</option>
+            </Form.Select>
             <NavLink to={"/"} className="nav-link enterButton">
               Войти
             </NavLink>
