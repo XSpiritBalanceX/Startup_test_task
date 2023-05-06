@@ -7,10 +7,11 @@
   select {
     width: 380px;
     height: 43px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
   label {
     @extend %text-h3;
+    margin-top: 20px;
   }
   select {
     padding: 10px;
@@ -35,6 +36,7 @@
       border-radius: 100px;
       @extend %text-in-nav;
       color: map-get($theme-colors, "white");
+      margin-top: 0;
     }
     input {
       display: none;
