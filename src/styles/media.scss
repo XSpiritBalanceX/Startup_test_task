@@ -1,6 +1,9 @@
 @media all and (max-width: 90em) {
-  .navbar {
-    background-color: red;
+  .registrationNavbar {
+    padding: 33px 10px;
+  }
+  .registrationPageContainer {
+    margin-right: 0 !important;
   }
   .containerForm,
   .containerFormRegistration {
@@ -28,12 +31,12 @@
   .mainPicture {
     top: 430px;
   }
+  .footerContainer {
+    height: auto !important;
+  }
 }
 
 @media all and (max-width: 80em) {
-  .navbar {
-    background-color: peru;
-  }
   .authPageContainer {
     margin-right: 20px;
     padding-left: 0;
@@ -52,9 +55,6 @@
     width: 70%;
     margin-left: 20px;
   }
-  .footerContainer {
-    height: auto;
-  }
   .firstPicture {
     width: 32%;
     top: 250px;
@@ -72,9 +72,6 @@
 }
 
 @media all and (max-width: 75em) {
-  .navbar {
-    background-color: green;
-  }
   .authPageContainer {
     width: 95%;
     margin: 0 0% 5% 12%;
@@ -104,8 +101,10 @@
 }
 
 @media all and (max-width: 70em) {
-  .navbar {
-    background-color: yellow;
+  .registrationNavbar {
+    a {
+      font-size: 16px;
+    }
   }
   .authPageContainer {
     margin-left: 8%;
@@ -142,8 +141,10 @@
 }
 
 @media all and (max-width: 65em) {
+  .registrationNavbar {
+    padding: 33px 0px;
+  }
   .navbar {
-    background-color: pink;
     a {
       font-size: 16px;
     }
@@ -167,7 +168,7 @@
     margin-left: 2%;
   }
   .footerContainer {
-    padding: 25px;
+    padding: 10px !important;
     p {
       font-size: 18px;
     }
@@ -178,8 +179,14 @@
 }
 
 @media all and (max-width: 60em) {
+  .registrationNavbar {
+    .row {
+      .col:nth-child(2) {
+        flex: 2;
+      }
+    }
+  }
   .navbar {
-    background-color: rgb(71, 108, 229);
     padding-left: 0;
   }
   .containerForm,
@@ -193,8 +200,21 @@
 }
 
 @media all and (max-width: 55em) {
+  .registrationNavbar {
+    .row {
+      .col:nth-child(3) {
+        flex: 0.5;
+        select {
+          width: 55px;
+        }
+        img {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+  }
   .navbar {
-    background-color: rgb(237, 42, 120);
     padding-left: 20px;
     a {
       font-size: 14px;
@@ -225,8 +245,33 @@
 }
 
 @media all and (max-width: 50em) {
+  .registrationNavbar {
+    height: auto;
+    .row {
+      .col:nth-child(1) {
+        flex: 0.3;
+        img {
+          width: 100px;
+          height: 40px;
+        }
+      }
+      .col:nth-child(2) {
+        input {
+          font-size: 14px;
+          flex: 0.7;
+        }
+        button {
+          width: 100px;
+          font-size: 14px;
+          padding: 10px;
+        }
+        select {
+          margin-left: -10px;
+        }
+      }
+    }
+  }
   .navbar {
-    background-color: rgb(50, 235, 50);
     padding-left: 0;
     .enterButton {
       width: 70px;
@@ -266,7 +311,6 @@
 
 @media all and (max-width: 45em) {
   .navbar {
-    background-color: rgb(237, 101, 91);
     img {
       width: 80px;
       margin-right: 10px;
@@ -298,8 +342,21 @@
 }
 
 @media all and (max-width: 40em) {
+  .registrationNavbar {
+    .row {
+      .col:nth-child(1) {
+        flex: 0;
+      }
+      .col:nth-child(3) {
+        flex: 1;
+        padding-top: 10px;
+        img {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
   .navbar {
-    background-color: rgb(82, 211, 240);
     padding: 10px;
     img {
       width: 120px;
