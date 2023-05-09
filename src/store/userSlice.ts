@@ -12,13 +12,18 @@ type UserInfo = {
 
 type UserState = {
   isLogin: boolean;
-  token: null | string;
   userInfo: UserInfo | object;
 };
 
+type UserLogin = {
+  login: boolean;
+  token: string;
+};
+
+let tokenInStorage: string | null = sessionStorage.getItem("token");
+
 const initialState: UserState = {
-  isLogin: false,
-  token: null,
+  isLogin: tokenInStorage !== null ? true : false,
   userInfo: {},
 };
 
@@ -26,11 +31,9 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    loginUser(state, action: PayloadAction<boolean>) {
-      state.isLogin = action.payload;
-    },
-    setToken(state, action: PayloadAction<string>) {
-      state.token = action.payload;
+    loginUser(state, action: PayloadAction<UserLogin>) {
+      state.isLogin = action.payload.login;
+      sessionStorage.setItem("token", action.payload.token);
     },
     addUserInfo(state, action: PayloadAction<UserInfo>) {
       state.userInfo = action.payload;
@@ -38,6 +41,6 @@ const userSlice = createSlice({
   },
 });
 
-export const { loginUser, setToken, addUserInfo } = userSlice.actions;
+export const { loginUser, addUserInfo } = userSlice.actions;
 
 export default userSlice.reducer;

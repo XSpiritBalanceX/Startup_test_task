@@ -29,7 +29,6 @@ function post(url: string, body: ISignInUp) {
 }
 
 function handleResponse(response: any) {
-  console.log(response);
   if (response.status !== 201) {
     const error = response.statusText;
     return Promise.reject(error);

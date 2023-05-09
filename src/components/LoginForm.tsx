@@ -1,17 +1,27 @@
 import { Container, Form, Button } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/LoginForm.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { APIUser } from "./axiosWrapper";
+import { useAppDispatch } from "../store/hook";
+import { loginUser } from "../store/userSlice";
 
 interface ILoginForm {
   email: string;
   password: string;
 }
 
+interface IResponseLogin {
+  access_token: string;
+  refresh_token: string;
+}
+
 const LoginForm = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
   const validationSchemaLogin = Yup.object().shape({
     email: Yup.string().required("*Email обязателен").email("*Неверный email"),
     password: Yup.string()
@@ -28,12 +38,15 @@ const LoginForm = () => {
   });
 
   const onSubmitLogin = async (data: ILoginForm) => {
-    const dataResponse = await APIUser.signInUser({
+    const dataResponse: IResponseLogin = await APIUser.signInUser({
       email: data.email,
       password: data.password,
       device: "postman",
     });
-    console.log(dataResponse);
+    if (dataResponse) {
+      dispatch(loginUser({ login: true, token: dataResponse.access_token }));
+      navigate("/userpage");
+    }
   };
   return (
     <Container className="containerForm">
