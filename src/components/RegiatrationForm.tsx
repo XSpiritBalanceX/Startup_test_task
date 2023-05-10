@@ -1,11 +1,13 @@
 import { Container, Form, Button } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/RegistrationForm.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import YupPassword from "yup-password";
 import { APIUser } from "./axiosWrapper";
+import { useAppDispatch } from "../store/hook";
+import { loginUser } from "../store/userSlice";
 
 YupPassword(Yup);
 
@@ -19,6 +21,9 @@ interface IRegistrationForm {
 }
 
 const RegistrationForm = () => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
   const validationSchemaRegistration = Yup.object().shape({
     first_name: Yup.string().required("*Имя обезательно"),
     last_name: Yup.string().required("*Фамилия обезательна"),
@@ -53,7 +58,12 @@ const RegistrationForm = () => {
       device: "postman",
       user_type: 1,
     });
-    console.log(dataResponse);
+    if (dataResponse) {
+      dispatch(loginUser(true));
+      localStorage.setItem("access_token", dataResponse.access_token);
+      localStorage.setItem("refresh_token", dataResponse.refresh_token);
+      navigate("/userpage");
+    }
   };
   return (
     <Container className="containerFormRegistration">

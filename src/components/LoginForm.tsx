@@ -44,7 +44,9 @@ const LoginForm = () => {
       device: "postman",
     });
     if (dataResponse) {
-      dispatch(loginUser({ login: true, token: dataResponse.access_token }));
+      dispatch(loginUser(true));
+      localStorage.setItem("access_token", dataResponse.access_token);
+      localStorage.setItem("refresh_token", dataResponse.refresh_token);
       navigate("/userpage");
     }
   };

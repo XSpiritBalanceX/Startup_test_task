@@ -10,9 +10,11 @@ interface ISignInUp {
   user_type?: number;
 }
 
-enum APIRouters {
+export enum APIRouters {
   signin = "http://212.193.62.231:8080/auth/singin",
   signupbase = "http://212.193.62.231:8080/auth/signup/base",
+  userinfo = "http://212.193.62.231:8080/user/profile",
+  refreshtoken = "http://212.193.62.231:8080/auth/refreshToken",
 }
 
 const axiosWrapper = {
