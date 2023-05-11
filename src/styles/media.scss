@@ -34,6 +34,9 @@
   .footerContainer {
     height: auto !important;
   }
+  .deleteLanguageButton {
+    margin-top: 20px;
+  }
 }
 
 @media all and (max-width: 80em) {
@@ -200,6 +203,11 @@
 }
 
 @media all and (max-width: 55em) {
+  .registrationPageContainer {
+    margin-left: 5%;
+    padding: 0;
+    width: 100%;
+  }
   .registrationNavbar {
     .row {
       .col:nth-child(3) {
@@ -342,6 +350,9 @@
 }
 
 @media all and (max-width: 40em) {
+  .registrationPageContainer {
+    margin-left: 1%;
+  }
   .registrationNavbar {
     .row {
       .col:nth-child(1) {
@@ -384,5 +395,47 @@
   .mainPicture {
     top: 470px;
     left: 40px;
+  }
+  .footerContainer {
+    padding: 20px !important;
+    .row {
+      .col {
+        margin-bottom: 30px;
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+    .logoFooter {
+      flex: 0.4;
+      img {
+        width: 100px;
+        height: 41px;
+      }
+    }
+    .list-group-item {
+      font-size: 13px !important;
+    }
+    .row:nth-child(2) {
+      p {
+        font-size: 14px;
+      }
+      .col:nth-child(1) {
+        flex: 0;
+        margin-right: 0;
+      }
+      .col:nth-child(2) {
+        flex: 1;
+        padding: 0;
+      }
+      .col:nth-child(3) {
+        flex: 0.8;
+        padding: 0;
+      }
+      .col:nth-child(4) {
+        flex: 0.8;
+        padding: 0;
+      }
+    }
   }
 }
