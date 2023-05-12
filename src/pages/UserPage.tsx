@@ -14,7 +14,7 @@ const UserPage = () => {
   }, [dispatch]);
 
   return (
-    <Container>
+    <Container className="userContainer">
       {isLoading && <Spinner animation="border" variant="info" />}
       {err && <div>Упс... Возникла ошибка</div>}
       {dataUser && (

@@ -1,6 +1,8 @@
 @media all and (max-width: 90em) {
   .registrationNavbar {
     padding: 33px 10px;
+    overflow-x: hidden;
+    height: auto;
   }
   .registrationPageContainer {
     margin-right: 0 !important;
@@ -15,6 +17,10 @@
         width: 100%;
       }
     }
+  }
+  .navbar {
+    overflow-x: hidden;
+    height: auto;
   }
 
   .firstPicture {
@@ -145,7 +151,12 @@
 
 @media all and (max-width: 65em) {
   .registrationNavbar {
-    padding: 33px 0px;
+    .row:nth-child(1) {
+      width: 95%;
+    }
+    .row:nth-child(2) {
+      width: 95%;
+    }
   }
   .navbar {
     a {
@@ -171,7 +182,8 @@
     margin-left: 2%;
   }
   .footerContainer {
-    padding: 10px !important;
+    padding: 25px !important;
+    overflow-x: hidden;
     p {
       font-size: 18px;
     }
@@ -206,7 +218,8 @@
   .registrationPageContainer {
     margin-left: 5%;
     padding: 0;
-    width: 100%;
+    width: 90%;
+    overflow-x: hidden;
   }
   .registrationNavbar {
     .row {
@@ -254,7 +267,6 @@
 
 @media all and (max-width: 50em) {
   .registrationNavbar {
-    height: auto;
     .row {
       .col:nth-child(1) {
         flex: 0.3;
@@ -353,6 +365,14 @@
   .registrationPageContainer {
     margin-left: 1%;
   }
+  .authPageContainer {
+    overflow-x: hidden;
+    width: 90%;
+    .mainWords {
+      font-size: 20px;
+      width: 90%;
+    }
+  }
   .registrationNavbar {
     .row {
       .col:nth-child(1) {
@@ -376,28 +396,30 @@
   .navBarContainer {
     flex-direction: column;
   }
+  .navbar-nav {
+    flex-direction: column !important;
+  }
   .containerForm {
-    margin: 100% 0 0 7%;
+    margin: 140% 0 0 7%;
   }
   .containerFormRegistration {
-    margin: 110% 0 0 7%;
+    margin: 140% 0 0 2%;
   }
   .firstPicture {
-    width: 70%;
+    width: 60%;
     top: 260px;
-    left: 80px;
-  }
-  .secondPicture {
-    width: 70%;
-    top: 370px;
-    left: 230px;
-  }
-  .mainPicture {
-    top: 470px;
     left: 40px;
   }
+  .secondPicture {
+    width: 60%;
+    top: 380px;
+    left: 150px;
+  }
+  .mainPicture {
+    top: 480px;
+    left: -30px;
+  }
   .footerContainer {
-    padding: 20px !important;
     .row {
       .col {
         margin-bottom: 30px;
@@ -425,7 +447,7 @@
         margin-right: 0;
       }
       .col:nth-child(2) {
-        flex: 1;
+        flex: 0.8;
         padding: 0;
       }
       .col:nth-child(3) {

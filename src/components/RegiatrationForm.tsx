@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/RegistrationForm.scss";
@@ -24,6 +25,13 @@ interface IRegistrationForm {
 const RegistrationForm = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const [passShowHide, setPassShowHide] = useState(true);
+  const [confirmPassShowHide, setConfirmPassShowHide] = useState(true);
+  const handleShowHidePassword = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.name === "password" && setPassShowHide(!passShowHide);
+    e.currentTarget.name === "confirmPass" &&
+      setConfirmPassShowHide(!confirmPassShowHide);
+  };
 
   const validationSchemaRegistration = Yup.object().shape({
     user_type: Yup.string()
@@ -129,19 +137,41 @@ const RegistrationForm = () => {
         <Form.Group className="mb-3">
           <Form.Label>Придумайте пароль</Form.Label>
           <Form.Control
-            type="password"
+            type={passShowHide ? "password" : "text"}
             placeholder="Пароль"
             {...register("password")}
           />
+          <Button
+            name="password"
+            onClick={handleShowHidePassword}
+            className="showHideButton"
+          >
+            {passShowHide ? (
+              <i className="bi bi-eye-slash"></i>
+            ) : (
+              <i className="bi bi-eye"></i>
+            )}
+          </Button>
           <span className="errorMessage">{errors.password?.message}</span>
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>Повторите пароль</Form.Label>
           <Form.Control
-            type="password"
+            type={confirmPassShowHide ? "password" : "text"}
             placeholder="Пароль"
             {...register("confirmpassword")}
           />
+          <Button
+            name="confirmPass"
+            onClick={handleShowHidePassword}
+            className="showHideButton"
+          >
+            {confirmPassShowHide ? (
+              <i className="bi bi-eye-slash"></i>
+            ) : (
+              <i className="bi bi-eye"></i>
+            )}
+          </Button>
           <span className="errorMessage">
             {errors.confirmpassword?.message}
           </span>

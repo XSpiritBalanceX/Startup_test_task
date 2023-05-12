@@ -27,6 +27,26 @@
       border-radius: 100px;
       @extend %text-in-nav;
     }
+    div:nth-child(5),
+    div:nth-child(6) {
+      position: relative;
+    }
+    .showHideButton {
+      width: 20px;
+      height: 25px;
+      position: absolute;
+      right: 15px;
+      bottom: 14px;
+      background-color: transparent;
+      border: none;
+      i {
+        color: map-deep-get($theme-colors, "text", "grey");
+        font-size: 21px;
+      }
+    }
+    .showHideButton:active {
+      background-color: transparent;
+    }
   }
 }
 

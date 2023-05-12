@@ -39,3 +39,13 @@
     padding: 10px 20px !important;
   }
 }
+
+.userContainer {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    font-size: 20px;
+  }
+}

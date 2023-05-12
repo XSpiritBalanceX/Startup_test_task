@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Container, Button, Row, Col, InputGroup, Form } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "../styles/RegistrationNavbar.scss";
@@ -8,23 +9,40 @@ const notif = require("../images/notif.png");
 const message = require("../images/message.png");
 
 const RegistrationNavBar = () => {
+  const [sum, setSum] = useState<string>("");
+  const [currentSum, setCurrentSum] = useState<number>(50);
+  const handleSetSum = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSum(e.currentTarget.value);
+  };
+  const handleSetCurrentSum = () => {
+    setCurrentSum((state) => {
+      return state + Number(sum);
+    });
+    setSum("");
+  };
   return (
     <Container className="registrationNavbar">
       <Row>
         <Col>
-          <img src={logo} alt="logo" className="logo" />
+          <NavLink to={"/"}>
+            <img src={logo} alt="logo" className="logo" />
+          </NavLink>
         </Col>
         <Col>
           <InputGroup>
-            <Form.Control placeholder="Баланс ($)" />
-            <InputGroup.Text>50</InputGroup.Text>
+            <Form.Control
+              placeholder="Баланс ($)"
+              onChange={handleSetSum}
+              value={sum}
+            />
+            <InputGroup.Text>{currentSum}</InputGroup.Text>
           </InputGroup>
           <Form.Select className="mb-3">
             <option hidden>USD</option>
             <option value="1">USD</option>
             <option value="2">BYN</option>
           </Form.Select>
-          <Button>Пополнить</Button>
+          <Button onClick={handleSetCurrentSum}>Пополнить</Button>
         </Col>
         <Col>
           <Form.Select className="mb-3">
@@ -37,9 +55,9 @@ const RegistrationNavBar = () => {
       <Row>
         <Col></Col>
         <Col>
-          <NavLink to={"/regstudent"}>Мои уроки</NavLink>
-          <NavLink to={"/regstudent"}>Найти преподавателя</NavLink>
-          <NavLink to={"/regstudent"}>Пригласить друга</NavLink>
+          <NavLink to={"/"}>Мои уроки</NavLink>
+          <NavLink to={"/"}>Найти преподавателя</NavLink>
+          <NavLink to={"/"}>Пригласить друга</NavLink>
         </Col>
         <Col className="personalGroup">
           <img src={notif} alt="notification" />

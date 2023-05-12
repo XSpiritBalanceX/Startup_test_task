@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/LoginForm.scss";
@@ -21,6 +22,11 @@ interface IResponseLogin {
 const LoginForm = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+
+  const [passShowHide, setPassShowHide] = useState(true);
+  const handleShowHidePassword = () => {
+    setPassShowHide(!passShowHide);
+  };
 
   const validationSchemaLogin = Yup.object().shape({
     email: Yup.string().required("*Email обязателен").email("*Неверный email"),
@@ -66,10 +72,17 @@ const LoginForm = () => {
         <Form.Group className="mb-3">
           <Form.Label>Пароль</Form.Label>
           <Form.Control
-            type="password"
+            type={passShowHide ? "password" : "text"}
             placeholder="Пароль"
             {...register("password")}
           />
+          <Button onClick={handleShowHidePassword} className="showHideButton">
+            {passShowHide ? (
+              <i className="bi bi-eye-slash"></i>
+            ) : (
+              <i className="bi bi-eye"></i>
+            )}
+          </Button>
           <span className="errorMessage">{errors.password?.message}</span>
         </Form.Group>
         <NavLink to={"/"} className="nav-link">
