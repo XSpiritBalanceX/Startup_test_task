@@ -12,6 +12,7 @@ import { loginUser } from "../store/userSlice";
 YupPassword(Yup);
 
 interface IRegistrationForm {
+  user_type: string;
   first_name: string;
   last_name: string;
   email: string;
@@ -25,6 +26,9 @@ const RegistrationForm = () => {
   const dispatch = useAppDispatch();
 
   const validationSchemaRegistration = Yup.object().shape({
+    user_type: Yup.string()
+      .oneOf(["0", "1"])
+      .required("*Выберите способ регистрации"),
     first_name: Yup.string().required("*Имя обезательно"),
     last_name: Yup.string().required("*Фамилия обезательна"),
     email: Yup.string().required("*Email обязателен").email("*Неверный email"),
@@ -56,24 +60,45 @@ const RegistrationForm = () => {
       email: data.email,
       password: data.password,
       device: "postman",
-      user_type: 1,
+      user_type: Number(data.user_type),
     });
     if (dataResponse) {
       dispatch(loginUser(true));
       localStorage.setItem("access_token", dataResponse.access_token);
       localStorage.setItem("refresh_token", dataResponse.refresh_token);
-      navigate("/userpage");
+      data.user_type === "0"
+        ? navigate("/regstudent")
+        : navigate("/regteacher");
     }
   };
+
   return (
     <Container className="containerFormRegistration">
       <p>Регистрация</p>
-      <div className="radioButton">
-        <p>Зарегистрироваться как:</p>
-        <Form.Check inline label="Ученик" name="student" type="radio" />
-        <Form.Check inline label="Преподаватель" name="teacher" type="radio" />
-      </div>
       <Form className="mt-4" onSubmit={handleSubmit(onSubmiRegistration)}>
+        <div className="radioButton">
+          <p>Зарегистрироваться как:</p>
+          <Form.Group>
+            <Form.Check
+              inline
+              id="0"
+              value={"0"}
+              label="Ученик"
+              type="radio"
+              {...register("user_type")}
+            />
+            <Form.Check
+              inline
+              label="Преподаватель"
+              type="radio"
+              id="1"
+              value={"1"}
+              {...register("user_type")}
+            />
+            <span className="errorMessage">{errors.user_type?.message}</span>
+          </Form.Group>
+        </div>
+
         <Form.Group className="mb-3">
           <Form.Label>Имя</Form.Label>
           <Form.Control

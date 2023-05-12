@@ -8,13 +8,17 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import TeacherRow from "./TeacherRow";
+import { APIUser } from "./axiosWrapper";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const user = require("../images/user.png");
 
 type TeacherLanguage = {
   language: string;
   level: string;
-  price: string;
+  description: string;
+  price: number;
 };
 
 interface IRegistrationPage {
@@ -28,6 +32,8 @@ interface IRegistrationPage {
 }
 
 const TeacherForm = () => {
+  const navigate = useNavigate();
+
   const validationSchemaTeacherReg = Yup.object().shape({
     first_name: Yup.string().required("*Имя обезательно"),
     last_name: Yup.string().required("*Фамилия обезательна"),
@@ -42,7 +48,10 @@ const TeacherForm = () => {
       Yup.object({
         language: Yup.string().required("*Выберете язык"),
         level: Yup.string().required("*Выберете уровень владения"),
-        price: Yup.string().required("*Укажите стоимость занятия"),
+        description: Yup.string().default("qweqweqwe"),
+        price: Yup.number()
+          .required("*Укажите стоимость занятия")
+          .typeError("*Укажите стоимость занятия"),
       })
     ),
   });
@@ -54,8 +63,16 @@ const TeacherForm = () => {
     resolver: yupResolver(validationSchemaTeacherReg),
   });
 
-  const onSubmitRegistration = (data: IRegistrationPage) => {
-    console.log(data);
+  const onSubmitRegistration = async (data: IRegistrationPage) => {
+    const dataResponse = await APIUser.signupTeacher({
+      date_of_birthday: data.date_of_birthday.split(".").reverse().join("-"),
+      country: data.country,
+      teaching_languages: data.teaching_languages,
+    });
+    if (dataResponse) {
+      toast.success("Вы успешно зарегистрировались");
+      navigate("/userpage");
+    }
   };
 
   const [countLanguage, setCountLanguage] = useState<number>(1);

@@ -79,7 +79,8 @@ const TeacherRow = ({
             <Form.Group>
               <Form.Label>Стоимость занятия (USD)</Form.Label>
               <Form.Control
-                type="text"
+                type="number"
+                step={0.1}
                 placeholder="Введите стоимость"
                 {...cbRegister(`teaching_languages.${id}.price`)}
               />

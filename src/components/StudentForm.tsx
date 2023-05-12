@@ -7,6 +7,9 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import StudentRow from "./StudentRow";
+import { APIUser } from "./axiosWrapper";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const user = require("../images/user.png");
 
@@ -25,6 +28,8 @@ interface IRegistrationPage {
 }
 
 const StudentForm = () => {
+  const navigate = useNavigate();
+
   const validationSchemaStudentReg = Yup.object().shape({
     first_name: Yup.string().required("*Имя обезательно"),
     last_name: Yup.string().required("*Фамилия обезательна"),
@@ -49,8 +54,15 @@ const StudentForm = () => {
     resolver: yupResolver(validationSchemaStudentReg),
   });
 
-  const onSubmitRegistration = (data: IRegistrationPage) => {
-    console.log(data);
+  const onSubmitRegistration = async (data: IRegistrationPage) => {
+    const dataResponse = await APIUser.signupStudent({
+      date_of_birthday: data.date_of_birthday.split(".").reverse().join("-"),
+      learning_languages: data.learning_languages,
+    });
+    if (dataResponse) {
+      toast.success("Вы успешно зарегистрировались");
+      navigate("/userpage");
+    }
   };
 
   const [countLanguage, setCountLanguage] = useState<number>(1);

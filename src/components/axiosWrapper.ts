@@ -10,20 +10,52 @@ interface ISignInUp {
   user_type?: number;
 }
 
+interface ILanguageStudentTeacher {
+  language: string;
+  level: string;
+  description: string;
+  price?: number;
+}
+
+interface ISignUpStudentTeacher {
+  date_of_birthday: string;
+  country?: string;
+  learning_languages?: ILanguageStudentTeacher[];
+  teaching_languages?: ILanguageStudentTeacher[];
+}
+
 export enum APIRouters {
   signin = "http://212.193.62.231:8080/auth/singin",
   signupbase = "http://212.193.62.231:8080/auth/signup/base",
   userinfo = "http://212.193.62.231:8080/user/profile",
   refreshtoken = "http://212.193.62.231:8080/auth/refreshToken",
+  signupstudent = "http://212.193.62.231:8080/auth/signup/student",
+  signupteacher = "http://212.193.62.231:8080/auth/signup/teacher",
 }
 
 const axiosWrapper = {
   post,
+  postWithToken,
 };
 
 function post(url: string, body: ISignInUp) {
   return axios
     .post(url, body)
+    .then(handleResponse)
+    .catch((err) => {
+      toast.error(err.message);
+    });
+}
+
+function postWithToken(urlReq: string, body: ISignUpStudentTeacher) {
+  return axios({
+    method: "post",
+    url: urlReq,
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+    },
+    data: body,
+  })
     .then(handleResponse)
     .catch((err) => {
       toast.error(err.message);
@@ -41,6 +73,8 @@ function handleResponse(response: any) {
 export const APIUser = {
   signInUser,
   signUpBaseUser,
+  signupStudent,
+  signupTeacher,
 };
 
 function signInUser(body: ISignInUp) {
@@ -49,4 +83,12 @@ function signInUser(body: ISignInUp) {
 
 function signUpBaseUser(body: ISignInUp) {
   return axiosWrapper.post(APIRouters.signupbase, body);
+}
+
+function signupStudent(body: ISignUpStudentTeacher) {
+  return axiosWrapper.postWithToken(APIRouters.signupstudent, body);
+}
+
+function signupTeacher(body: ISignUpStudentTeacher) {
+  return axiosWrapper.postWithToken(APIRouters.signupteacher, body);
 }
