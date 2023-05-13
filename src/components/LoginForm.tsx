@@ -5,7 +5,7 @@ import "../styles/LoginForm.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import { APIUser } from "./axiosWrapper";
+import { APIUser } from "../utility/axiosWrapper";
 import { useAppDispatch } from "../store/hook";
 import { loginUser } from "../store/userSlice";
 

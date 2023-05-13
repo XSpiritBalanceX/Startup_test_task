@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import TeacherRow from "./TeacherRow";
-import { APIUser } from "./axiosWrapper";
+import { APIUser } from "../utility/axiosWrapper";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 

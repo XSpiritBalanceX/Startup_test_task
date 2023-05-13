@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { APIRouters } from "../components/axiosWrapper";
+import { APIRouters } from "../utility/axiosWrapper";
 
 type UserInfo = {
   first_name: string;
