@@ -7,6 +7,7 @@ import * as Yup from "yup";
 import { APIUser } from "../utility/axiosWrapper";
 import { useAppDispatch } from "../store/hook";
 import { loginUser } from "../store/userSlice";
+import Icon from "./Icon";
 import "../styles/LoginForm.scss";
 
 interface ILoginForm {
@@ -77,11 +78,7 @@ const LoginForm = () => {
             {...register("password")}
           />
           <Button onClick={handleShowHidePassword} className="showHideButton">
-            {passShowHide ? (
-              <i className="bi bi-eye-slash"></i>
-            ) : (
-              <i className="bi bi-eye"></i>
-            )}
+            {passShowHide ? <Icon name="hidepass" /> : <Icon name="showpass" />}
           </Button>
           <span className="errorMessage">{errors.password?.message}</span>
         </Form.Group>
@@ -103,13 +100,13 @@ const LoginForm = () => {
         <p>Войдите с помощью</p>
         <ul>
           <li>
-            <i className="bi bi-facebook"></i>
+            <Icon name="facebook" />
           </li>
           <li>
-            <i className="bi bi-twitter"></i>
+            <Icon name="twitter" />
           </li>
           <li>
-            <i className="bi bi-google"></i>
+            <Icon name="google" />
           </li>
         </ul>
       </div>

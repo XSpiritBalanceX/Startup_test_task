@@ -11,6 +11,7 @@ import TeacherRow from "./TeacherRow";
 import { APIUser } from "../utility/axiosWrapper";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Icon from "./Icon";
 
 const user = require("../images/user.png");
 
@@ -199,7 +200,7 @@ const TeacherForm = () => {
         {formRow}
         <div className="roundButton">
           <Button type="button" onClick={increaseRow}>
-            <i className="bi bi-plus"></i>
+            <Icon name="plus" />
           </Button>
           <p>Добавить язык преподавания</p>
         </div>

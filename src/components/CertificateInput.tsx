@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Col, Form, Button, Row } from "react-bootstrap";
+import Icon from "./Icon";
 
 const CertificateInput = () => {
   const [picCertificate, setPicCertificate] = useState<File | null | undefined>(
@@ -8,8 +9,6 @@ const CertificateInput = () => {
   const [showPicCertificate, setShowPicCertificate] = useState<
     string | ArrayBuffer | null
   >(null);
-
-  const PlusIcon = () => <i className="bi bi-plus"></i>;
 
   const handleCertificate = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -32,7 +31,7 @@ const CertificateInput = () => {
         {!picCertificate && (
           <Form.Group className="roundButton">
             <Form.Label htmlFor="certificate">
-              <PlusIcon />
+              <Icon name="plus" />
             </Form.Label>
             <Form.Control
               type="file"
@@ -51,7 +50,7 @@ const CertificateInput = () => {
               <p>{picCertificate.name}</p>
               <p>{(Number(picCertificate.size) / 1000).toFixed(0)} kB</p>
               <Button onClick={handleDeleteCertificate}>
-                <i className="bi bi-x"></i>
+                <Icon name="close" />
               </Button>
             </Col>
           </Row>

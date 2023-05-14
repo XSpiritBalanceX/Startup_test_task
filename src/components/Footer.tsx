@@ -1,4 +1,5 @@
 import { Container, Row, Col, ListGroup } from "react-bootstrap";
+import Icon from "./Icon";
 import "../styles/Footer.scss";
 
 const logo = require("../images/logoWhite.png");
@@ -58,7 +59,7 @@ const Footer = () => {
         </Col>
         <Col className="thirdFlex">
           <p>
-            <i className="bi bi-c-circle"></i> 2021-2022 All rights reserved
+            <Icon name="coopywriter" /> 2021-2022 All rights reserved
           </p>
         </Col>
       </Row>

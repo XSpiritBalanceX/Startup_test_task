@@ -9,6 +9,7 @@ import YupPassword from "yup-password";
 import { APIUser } from "../utility/axiosWrapper";
 import { useAppDispatch } from "../store/hook";
 import { loginUser } from "../store/userSlice";
+import Icon from "./Icon";
 
 YupPassword(Yup);
 
@@ -146,11 +147,7 @@ const RegistrationForm = () => {
             onClick={handleShowHidePassword}
             className="showHideButton"
           >
-            {passShowHide ? (
-              <i className="bi bi-eye-slash"></i>
-            ) : (
-              <i className="bi bi-eye"></i>
-            )}
+            {passShowHide ? <Icon name="hidepass" /> : <Icon name="showpass" />}
           </Button>
           <span className="errorMessage">{errors.password?.message}</span>
         </Form.Group>
@@ -167,9 +164,9 @@ const RegistrationForm = () => {
             className="showHideButton"
           >
             {confirmPassShowHide ? (
-              <i className="bi bi-eye-slash"></i>
+              <Icon name="hidepass" />
             ) : (
-              <i className="bi bi-eye"></i>
+              <Icon name="showpass" />
             )}
           </Button>
           <span className="errorMessage">

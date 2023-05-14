@@ -1,8 +1,9 @@
 import { useLocation } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-import "../styles/AuthPage.scss";
 import LoginForm from "../components/LoginForm";
 import RegistrationForm from "../components/RegiatrationForm";
+import Icon from "../components/Icon";
+import "../styles/AuthPage.scss";
 
 const mainPicture = require("../images/mainPicture.png");
 
@@ -15,7 +16,7 @@ const AuthPage = () => {
         <Col>
           <Row className="mainWords">
             <p>
-              <span>TUTOR</span> <i className="bi bi-dash-lg"></i> платформа для
+              <span>TUTOR</span> <Icon name="dash" /> платформа для
               онлайн-обучения иностранным языкам
             </p>
           </Row>
