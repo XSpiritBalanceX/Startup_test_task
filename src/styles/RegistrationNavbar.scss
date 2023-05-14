@@ -1,0 +1,96 @@
+@import "variables";
+
+.registrationNavbar {
+  margin: 0;
+  max-width: 2000px;
+  height: 130px;
+  padding: 33px 130px 33px 130px;
+  background-color: map-get($theme-colors, "white");
+  box-shadow: map-deep-get($theme-colors, "box-shadow", "navbar");
+  button {
+    width: 135px;
+    height: 43px;
+    padding: 10px 20px 10px 20px;
+    background-color: transparent;
+    border: 2px solid map-get($theme-colors, "violet");
+    border-radius: 100px;
+    color: map-get($theme-colors, "violet");
+    @extend %text-in-nav;
+    line-height: 130%;
+  }
+  a {
+    @extend %text-in-nav;
+    line-height: 130%;
+    text-decoration: none;
+    color: map-get($theme-colors, "dark") !important;
+    padding-right: 20px;
+  }
+  .col:nth-child(1) {
+    flex: 0.5;
+  }
+  .col:nth-child(2) {
+    flex: 1.5;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+  .col:nth-child(3) {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+  }
+  .logo {
+    width: 130px;
+    height: 50px;
+  }
+}
+
+.form-select {
+  width: 68px;
+  height: 25px;
+  border: none;
+  padding: 0;
+  text-align: start;
+  margin-right: 20px;
+  margin-left: 20px;
+  option {
+    @extend %text-in-nav;
+    border: none;
+  }
+}
+
+.form-select:focus {
+  border: none;
+  box-shadow: none;
+}
+.input-group {
+  width: 180px;
+  margin-bottom: 18px;
+  input {
+    border-color: map-deep-get($theme-colors, "text", "light");
+    border-right: none;
+    @extend %text-in-nav;
+    line-height: 130%;
+  }
+}
+.input-group-text {
+  background-color: transparent;
+  border-color: map-deep-get($theme-colors, "text", "light");
+  @extend %text-in-nav;
+  line-height: 130%;
+}
+.personalGroup {
+  margin-top: -10px;
+  img {
+    width: 32px;
+    height: 38px;
+    margin-right: 20px;
+  }
+  img:last-child {
+    width: 32px;
+    height: 32px;
+    margin-top: 6px;
+    margin-right: 27px;
+  }
+}

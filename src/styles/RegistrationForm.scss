@@ -1,0 +1,114 @@
+@import "variables";
+
+.containerFormRegistration {
+  background-color: map-get($theme-colors, "white");
+  padding: 60px 100px;
+  margin-top: -10%;
+  text-align: center;
+  box-shadow: map-deep-get($theme-colors, "box-shadow", "form");
+  p {
+    @extend %header-in-form;
+  }
+  form {
+    text-align: start;
+    label {
+      @extend %header-in-form;
+      font-size: 18px;
+    }
+    input {
+      @extend %text-in-nav;
+      line-height: 130%;
+    }
+    button {
+      width: 100%;
+      padding: 10px 20px;
+      background-color: map-get($theme-colors, "violet");
+      border-color: map-get($theme-colors, "violet");
+      border-radius: 100px;
+      @extend %text-in-nav;
+    }
+    div:nth-child(5),
+    div:nth-child(6) {
+      position: relative;
+    }
+    .showHideButton {
+      width: 20px;
+      height: 25px;
+      position: absolute;
+      right: 15px;
+      bottom: 14px;
+      background-color: transparent;
+      border: none;
+      i {
+        color: map-deep-get($theme-colors, "text", "grey");
+        font-size: 21px;
+      }
+    }
+    .showHideButton:active {
+      background-color: transparent;
+    }
+  }
+}
+
+.radioButton {
+  margin: 30px 0 20px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .form-check {
+    label {
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 130%;
+    }
+  }
+  p {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 120%;
+  }
+}
+.form-check-label {
+  @extend %text-in-nav;
+  line-height: 130%;
+}
+.form-check-input:checked[type="radio"] {
+  background-image: url("../images/point.svg");
+  background-color: map-get($theme-colors, "white");
+  border-color: map-get($theme-colors, "violet");
+}
+
+.policy {
+  margin-left: 5px;
+  .form-check-input {
+    margin-top: 15px;
+  }
+  .form-check-label {
+    margin-top: 15px;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+  }
+}
+
+.enteredLink {
+  text-align: center;
+  margin-top: 30px;
+  p,
+  a {
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23.4px;
+    color: map-deep-get($theme-colors, "text", "grey");
+  }
+  a {
+    color: map-get($theme-colors, "violet");
+  }
+}

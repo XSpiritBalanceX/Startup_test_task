@@ -1,0 +1,77 @@
+@use "sass:map";
+
+$theme-colors: (
+  "body": #f5f5f5,
+  "violet": #5e66a7,
+  "white": #fefeff,
+  "light-violet": #e7e7ff66,
+  "dark": #4a4a4f,
+  "lightViolet": #e7e7ff,
+  "error": red,
+  "text": (
+    "grey": #a1a1a1,
+    "light": #b6b6bb,
+    "dark": #a2a2a2,
+  ),
+  "box-shadow": (
+    "form": (
+      0px 12px 24px rgba(129, 137, 197, 0.2),
+    ),
+    "navbar": (
+      0px 8px 20px rgba(201, 207, 255, 0.12),
+    ),
+  ),
+);
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+%text-in-nav {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23.4px;
+}
+
+%main-words {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 120%;
+}
+
+%text-h5 {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 10px 20px;
+  font-family: "Rubik", sans-serif;
+}
+
+%header-in-form {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+%text-small {
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+%text-h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+%text-h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 120%;
+  font-family: "Montserrat", sans-serif;
+}

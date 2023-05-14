@@ -1,0 +1,51 @@
+@import "variables";
+
+.navbar {
+  background-color: map-get($theme-colors, "white");
+  padding: 33px 130px 33px 130px;
+  box-shadow: map-deep-get($theme-colors, "box-shadow", "navbar");
+  height: 110px;
+}
+
+.navBarContainer {
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @extend %text-in-nav;
+  }
+  select {
+    background-color: transparent;
+    border: none;
+    color: map-deep-get($theme-colors, "text", "grey");
+    width: 55px;
+    margin-top: 15px;
+    @extend %text-in-nav;
+  }
+  :nth-child(3) {
+    border: solid 1px map-get($theme-colors, "violet");
+    background-color: map-get($theme-colors, "violet");
+    color: map-get($theme-colors, "white") !important;
+  }
+  .enterButton {
+    color: map-get($theme-colors, "violet") !important;
+    margin: 0 20px;
+  }
+  .enterButton,
+  :nth-child(3) {
+    border: solid 2px map-get($theme-colors, "violet");
+    border-radius: 100px;
+    padding: 10px 20px !important;
+  }
+}
+
+.userContainer {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    font-size: 20px;
+  }
+}
