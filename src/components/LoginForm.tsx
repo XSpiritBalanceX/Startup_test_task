@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
-import "../styles/LoginForm.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { APIUser } from "../utility/axiosWrapper";
 import { useAppDispatch } from "../store/hook";
 import { loginUser } from "../store/userSlice";
+import "../styles/LoginForm.scss";
 
 interface ILoginForm {
   email: string;

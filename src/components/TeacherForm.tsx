@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Container, Form, Row, Col, Button } from "react-bootstrap";
 import "../styles/RegistrationPage.scss";
 import { v4 as uuid } from "uuid";
-import { countries } from "../utility/Language";
+import { countries } from "../utility/Countries";
 import EmailNotification from "../components/EmailNotification";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";

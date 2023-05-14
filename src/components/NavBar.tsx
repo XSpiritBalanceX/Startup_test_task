@@ -7,10 +7,7 @@ const NavBar = () => {
   const isInitialNavbar =
     location.pathname === "/" || location.pathname === "/registration";
   return (
-    <div>
-      {isInitialNavbar && <InitialNavbar />}
-      {!isInitialNavbar && <RegistrationNavBar />}
-    </div>
+    <div>{isInitialNavbar ? <InitialNavbar /> : <RegistrationNavBar />}</div>
   );
 };
 

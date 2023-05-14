@@ -9,13 +9,15 @@ const EmailNotification = () => {
       return !state;
     });
   };
+
+  const CloseIcon = () => <i className="bi bi-x"></i>;
   return (
     <React.Fragment>
       {showNotification && (
         <div className="informWindow">
           <p>Ваш email не подтвержден. Пожалуйста перейдите в почту.</p>
           <Button onClick={handleCloseNotification}>
-            <i className="bi bi-x"></i>
+            <CloseIcon />
           </Button>
           <NavLink to={"/"}>Прислать подтверждение еще раз</NavLink>
         </div>

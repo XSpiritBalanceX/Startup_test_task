@@ -15,9 +15,7 @@ const RegistrationNavBar = () => {
     setSum(e.currentTarget.value);
   };
   const handleSetCurrentSum = () => {
-    setCurrentSum((state) => {
-      return state + Number(sum);
-    });
+    setCurrentSum((state) => state + Number(sum));
     setSum("");
   };
   return (

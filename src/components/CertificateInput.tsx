@@ -9,10 +9,12 @@ const CertificateInput = () => {
     string | ArrayBuffer | null
   >(null);
 
+  const PlusIcon = () => <i className="bi bi-plus"></i>;
+
   const handleCertificate = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     setPicCertificate(files?.item(0));
-    let reader = new FileReader();
+    const reader = new FileReader();
     reader.onloadend = () => {
       setShowPicCertificate(reader.result);
     };
@@ -30,7 +32,7 @@ const CertificateInput = () => {
         {!picCertificate && (
           <Form.Group className="roundButton">
             <Form.Label htmlFor="certificate">
-              <i className="bi bi-plus"></i>
+              <PlusIcon />
             </Form.Label>
             <Form.Control
               type="file"
