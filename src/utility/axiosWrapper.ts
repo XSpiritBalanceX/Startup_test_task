@@ -63,7 +63,7 @@ function postWithToken(urlReq: string, body: ISignUpStudentTeacher) {
 }
 
 function handleResponse(response: any) {
-  if (response.status !== 201) {
+  if (response.status !== 200) {
     const error = response.statusText;
     return Promise.reject(error);
   }

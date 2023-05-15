@@ -6,7 +6,7 @@ interface IconProps {
 
 const Icon = ({ name }: IconProps) => {
   const iconClassName = collectionIconsClassName.find((el) => el.name === name);
-  return <i className={iconClassName?.classname}></i>;
+  return <i className={iconClassName?.classname} role="icon"></i>;
 };
 
 export default Icon;
