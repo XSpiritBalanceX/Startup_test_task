@@ -62,12 +62,14 @@ function postWithToken(urlReq: string, body: ISignUpStudentTeacher) {
     });
 }
 
+const successfulStatusCodes = [200, 201];
+
 function handleResponse(response: any) {
-  if (response.status !== 200) {
+  if (!successfulStatusCodes.includes(response.status)) {
     const error = response.statusText;
     return Promise.reject(error);
   }
-  return response.data;
+  return Promise.resolve(response.data);
 }
 
 export const APIUser = {
