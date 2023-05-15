@@ -2,7 +2,7 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { APIRouters } from "../utility/axiosWrapper";
 
-type UserInfo = {
+export type UserInfo = {
   first_name: string;
   last_name: string;
   email: string;
@@ -12,7 +12,7 @@ type UserInfo = {
   photo: null | string;
 };
 
-type UserState = {
+export type UserState = {
   isLogin: boolean;
   userInfo: UserInfo | null;
   isLoading: boolean;

@@ -15,7 +15,9 @@ const UserPage = () => {
 
   return (
     <Container className="userContainer">
-      {isLoading && <Spinner animation="border" variant="info" />}
+      {isLoading && (
+        <Spinner animation="border" variant="info" data-testid="spinner" />
+      )}
       {err && <div>Упс... Возникла ошибка</div>}
       {dataUser && (
         <div>
